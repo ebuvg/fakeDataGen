@@ -13,6 +13,7 @@ pip install -r requirement.txt
 python main.py                    # Generate 5 records in JSON format
 python main.py -c 10              # Generate 10 records
 python main.py -c 3 -o pretty     # Generate 3 records in pretty format
+python main.py -c 3 -o csv        # Generate 3 records in csv format
 python main.py --help             # See all options
 
     
@@ -31,7 +32,9 @@ python main.py -c 5 -o csv
 
 # key notes
 ```
-pip freeze is a command in Python's package manager (pip) that outputs a list of all installed Python packages and their exact versions in the current environment.
+- pip list shows installed packages in a readable table.
+- pip freeze shows packages in requirements.txt format (package==version), making it useful for reproducible environments.
+
 $ pip freeze
 annotated-types==0.7.0
 anyio==4.14.1
@@ -48,6 +51,14 @@ python-dateutil==2.9.0.post0
 six==1.17.0
 typing-inspection==0.4.2
 typing_extensions==4.15.0
+-------------------------------------------------------------
+1)
+# git add .gitignore
+# git commit -m "add git ignore file"
+
+2)
+# git rm -r --cached .venv
+# git commit -m "remove .venv from tracking"
 
 ```
 # Questions

@@ -2,3 +2,9 @@
 tests/*
 tests/__pycache__/*
 __pycache__/*
+
+#ide
+.vscode/
+.idea/
+*.swp
+.DS_Store

@@ -20,7 +20,7 @@ class FakeDataGenerator:
         """
         self.faker = Faker(locale)
 
-    def generate_users(self, count: int = 5) -> List[Dict[str, Any]]:
+    def generate_users(self, count: int = 6) -> List[Dict[str, Any]]:
         """
         Generate fake user records.
         
@@ -35,11 +35,14 @@ class FakeDataGenerator:
         
         data = []
         for _ in range(count):
+            first_name = self.faker.first_name()
+            last_name = self.faker.last_name()
             record = {
-                "name": self.faker.name(),
+                "first_name": first_name,
+                "last_name": last_name,
                 "email": self.faker.email(),
                 "phone": self.faker.phone_number(),
-                "address": self.faker.address(),
+                "address": " ".join(self.faker.address().splitlines()),
                 "company": self.faker.company(),
             }
             data.append(record)

@@ -24,12 +24,26 @@ def format_output(data: list, output_format: str) -> None:
         if not data:
             print("No data to export")
             return
-        
+
+        normalized_data = []
+        for record in data:
+            normalized_record = {}
+            for key, value in record.items():
+                if isinstance(value, str):
+                    normalized_record[key] = " ".join(value.splitlines())
+                else:
+                    normalized_record[key] = value
+            normalized_data.append(normalized_record)
+
         # Get field names from first record
-        fieldnames = list(data[0].keys())
-        writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames)
+        fieldnames = list(normalized_data[0].keys())
+        writer = csv.DictWriter(
+            sys.stdout,
+            fieldnames=fieldnames,
+            lineterminator="\n",
+        )
         writer.writeheader()
-        writer.writerows(data)
+        writer.writerows(normalized_data)
         
     elif output_format == "pretty":
         for i, record in enumerate(data, 1):
@@ -94,7 +108,7 @@ def main() -> None:
         else:
             generator = FakeDataGenerator()
             data = generator.generate_users(count=args.count)
-        
+
         # Display output
         format_output(data, args.output)
         
