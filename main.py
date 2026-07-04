@@ -96,7 +96,7 @@ def main() -> None:
     )
     
     args = parser.parse_args()
-    
+
     try:
         # Generate data
         if args.ollama:

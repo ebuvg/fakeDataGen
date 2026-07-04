@@ -35,11 +35,10 @@ class FakeDataGenerator:
         
         data = []
         for _ in range(count):
-            first_name = self.faker.first_name()
-            last_name = self.faker.last_name()
+            
             record = {
-                "first_name": first_name,
-                "last_name": last_name,
+                "first_name": self.faker.first_name(),
+                "last_name": self.faker.last_name(),
                 "email": self.faker.email(),
                 "phone": self.faker.phone_number(),
                 "address": " ".join(self.faker.address().splitlines()),
