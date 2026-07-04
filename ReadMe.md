@@ -29,8 +29,32 @@ python main.py --ollama -c 5 -o csv --model phi4:latest --ollama-url http://loca
 python main.py -c 5 -o csv
 ```
 
+# key notes
+```
+pip freeze is a command in Python's package manager (pip) that outputs a list of all installed Python packages and their exact versions in the current environment.
+$ pip freeze
+annotated-types==0.7.0
+anyio==4.14.1
+certifi==2026.6.17
+Faker==24.1.0
+h11==0.16.0
+httpcore==1.0.9
+httpx==0.28.1
+idna==3.18
+ollama==0.6.2
+pydantic==2.13.4
+pydantic_core==2.46.4
+python-dateutil==2.9.0.post0
+six==1.17.0
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+
+```
 # Questions
 ===========
 1- how do you setup a virtual environment in Python?
 2- i would like to scaffold a basic application, that runs when i call main.py
 3- how do i extract the FakeDataGenerator class into it's own file and call it main.py, using python best pratices.
+4- I would like to connect to my Ollama server. I want to use the "phi:lates" model. I would like to send a prompt to it asking for fake data and have it return in a CSV format.
+
+5-  
