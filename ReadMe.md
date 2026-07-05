@@ -30,6 +30,17 @@ python main.py --ollama -c 5 -o csv --model phi4:latest --ollama-url http://loca
 python main.py -c 5 -o csv
 ```
 
+# REST API
+Run the API locally with:
+```
+python api.py
+```
+Then open:
+```
+http://127.0.0.1:5000/health
+http://127.0.0.1:5000/generate?count=3
+```
+
 # key notes
 ```
 - pip list shows installed packages in a readable table.
@@ -68,4 +79,5 @@ typing_extensions==4.15.0
 3- how do i extract the FakeDataGenerator class into it's own file and call it main.py, using python best pratices.
 4- I would like to connect to my Ollama server. I want to use the "phi:lates" model. I would like to send a prompt to it asking for fake data and have it return in a CSV format.
 
-5-  
+5- I would like to create a web API that use rest. 
+5- i would like to create a web api is python-rest-api with my existing file. I  would like to accept REST commands
